@@ -1,0 +1,28 @@
+
+#home{
+    display: flex;
+    flex-wrap: wrap;
+}
+#homeimg{
+    width: 850px;
+    height: 700px;
+}
+
+#dicetext{
+    font-size: 80px;
+    margin-top: 200px;
+}
+
+#playnow{
+    background-color: rgb(15, 15, 15);
+    color: white;
+    width: 150px;
+    height: 50px;
+    box-shadow: 5px 5px 5px;
+    
+
+}
+#playnow:hover{
+    
+
+}

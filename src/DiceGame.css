@@ -1,0 +1,58 @@
+.dice-game {
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  .score {
+    font-size: 2rem;
+    margin-bottom: 0px;
+  }
+  
+  .number-selection {
+    margin-left: 700px;
+  }
+  
+  .number-buttons button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .number-buttons .selected {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .dice-roll button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .reset button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 20px;
+  }
+  
+  .rules button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  #myimg{
+    width: 50px;
+    height: 60px;
+    border-radius: 20px;
+  }
+  
