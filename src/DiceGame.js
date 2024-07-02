@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './DiceGame.css';
-import Home from './Home.js'
+import Home from './Home.js';
 
 const DiceGame = () => {
   const [selectedNumber, setSelectedNumber] = useState(null);
   const [rolledNumber, setRolledNumber] = useState(null);
   const [totalScore, setTotalScore] = useState(0);
   const [error, setError] = useState('');
+  const [rotate, setRotate] = useState(false);
 
   const handleNumberSelect = (number) => {
     setSelectedNumber(number);
@@ -26,6 +27,9 @@ const DiceGame = () => {
     } else {
       setTotalScore((prevScore) => prevScore - 2);
     }
+
+    // Toggle rotation state
+    setRotate(!rotate);
   };
 
   const resetScore = () => {
@@ -33,12 +37,12 @@ const DiceGame = () => {
     setRolledNumber(null);
     setSelectedNumber(null);
     setError('');
+    setRotate(false);
   };
 
   return (
     <div className="dice-game">
-
-<div className="number-selection">
+      <div className="number-selection">
         <h3>Select Number</h3>
         <div className="number-buttons">
           {[1, 2, 3, 4, 5, 6].map((number) => (
@@ -52,26 +56,36 @@ const DiceGame = () => {
           ))}
         </div>
       </div>
-      
+
       <div className="score">
         <h2>Total Score</h2>
         <div>{totalScore}</div>
       </div>
-     
+
       <div className="dice-roll">
-        <button onClick={rollDice}  ><img  id='myimg' src="https://static.vecteezy.com/system/resources/previews/009/385/437/original/casino-dice-clipart-design-illustration-free-png.png" alt="" /></button>
+        <button onClick={rollDice}>
+          <img
+            id="myimg"
+            className={rotate ? 'rotate' : ''}
+            src="https://static.vecteezy.com/system/resources/previews/009/385/437/original/casino-dice-clipart-design-illustration-free-png.png"
+            alt="Dice"
+          />
+        </button>
         {rolledNumber && (
           <div>
             <h4>Rolled Number: {rolledNumber}</h4>
           </div>
         )}
       </div>
+
       <div className="reset">
         <button onClick={resetScore}>Reset Score</button>
       </div>
+
       {error && <div className="error">{error}</div>}
+
       <div className="rules">
-        <button onClick={() => alert('Rules:\n\n1. Select any number.\n2. Click on dice to roll.\n3. If selected number is equal to dice number, you will get same points.\n4. If wrong guess, then 2 point will be deducted.')}>
+        <button onClick={() => alert('Rules:\n\n1. Select any number.\n2. Click on dice to roll.\n3. If selected number is equal to dice number, you will get the same points.\n4. If wrong guess, then 2 points will be deducted.')}>
           Show Rules
         </button>
       </div>
