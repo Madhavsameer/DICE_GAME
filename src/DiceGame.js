@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './DiceGame.css';
-import Home from './Home.js';
 
 const DiceGame = () => {
   const [selectedNumber, setSelectedNumber] = useState(null);
